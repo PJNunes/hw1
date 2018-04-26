@@ -26,7 +26,7 @@
           <f:selectItem itemValue="${currency}" itemLabel="${currency}"/>
         </c:forEach>
       </h:selectOneMenu>
-      <input id="out_value" type="text" disabled="true" value="${bean.outValue}"/>
+      <input id="out_value" type="text" readonly="true" value="${bean.outValue}"/>
       <p></p>
       <h:commandButton id="Convert" value="Convert" action="${bean.convert}"/>                
     </h:form>
