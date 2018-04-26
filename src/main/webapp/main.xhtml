@@ -1,0 +1,34 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:c="http://java.sun.com/jsp/jstl/core"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+  <head>
+    <title>
+      Converter
+    </title>
+  </head>
+  <body>
+    <h1>
+      Converter
+    </h1>
+    <h:form>
+        
+      <h:selectOneMenu id="entry_currency" value="${bean.entryCurrency}">
+        <c:forEach var="currency" items="${bean.coins}" >
+            <f:selectItem itemValue="${currency}" itemLabel="${currency}"/>
+        </c:forEach>
+      </h:selectOneMenu>
+      <h:inputText id="entry_value" style="margin-left: 5px" value="${bean.entryValue}"/>
+      
+      <p></p>
+      <h:selectOneMenu id="out_currency" value="${bean.outCurrency}">
+        <c:forEach var="currency" items="${bean.coins}">
+          <f:selectItem itemValue="${currency}" itemLabel="${currency}"/>
+        </c:forEach>
+      </h:selectOneMenu>
+      <input id="out_value" type="text" disabled="true" value="${bean.outValue}"/>
+      <p></p>
+      <h:commandButton id="Convert" value="Convert" action="${bean.convert}"/>                
+    </h:form>
+  </body>
+</html>
